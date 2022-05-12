@@ -1,0 +1,10 @@
+Groups:
+- Projects
+- Resume
+- Blog
+- Contact
+
+Aesthetic:
+- Dark mode first (redux init)
+- Colorful in accent/secondary coloring
+- Gradient text animation instead of gradient bg
