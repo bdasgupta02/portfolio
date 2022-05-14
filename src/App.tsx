@@ -8,11 +8,15 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AnimatedCursor from "./components/Cursor";
 // Pages
 
-// Add dark mode handling for cursor
+// Add dark mode handling for cursor 17, 28, 38 for light and 255, 255, 255 for dark (make lighter and darker respectively)
+/**
+ * Ideas:
+ * - filters for projects page (link from home page directly to filters eg. I am a <link to projects with filter>, <> ..)
+ */
 function App() {
   return (
     <Router>
-      <AnimatedCursor color="50, 50, 50" innerSize={8} outerSize={6} innerScale={0.7} outerScale={4} />
+      <AnimatedCursor color="17, 28, 38" innerSize={8} outerSize={6} innerScale={0.7} outerScale={4} />
       <Navbar />
       <div style={{ overflowY: "auto" }}>
         <Routes>

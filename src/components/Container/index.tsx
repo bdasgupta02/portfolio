@@ -4,10 +4,21 @@ import Colors from "../tokens/colors";
 
 type Props = {
   children: React.ReactNode;
-  breakPoint?: string;
+  breakpoint?: string;
 };
 
-const Container = ({ children, breakPoint = "1000px" }: Props) => {
+const Container = ({ children, breakpoint = "md" }: Props) => {
+  const getBreakPoint = () => {
+    switch (breakpoint) {
+      case "sm":
+        return "600px";
+      case "md":
+        return "900px";
+      case "lg":
+        return "1200px";
+    }
+  };
+
   const Bg = styled.div`
     width: 100%;
     background-color: ${Colors.Neutral.Background};
@@ -17,7 +28,7 @@ const Container = ({ children, breakPoint = "1000px" }: Props) => {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    max-width: ${breakPoint};
+    max-width: ${getBreakPoint()};
   `;
 
   return (
