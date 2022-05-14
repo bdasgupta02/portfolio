@@ -1,11 +1,49 @@
-import React from 'react'
+import React from "react";
+import Container from "../Container";
+import * as NavElements from "./NavElements";
 
-function Navbar() {
-  
-
+/**
+ * - Light/dark mode switcher
+ */
+const Navbar = () => {
   return (
-    <div>Navbar</div>
-  )
-}
+    <div
+      style={{
+        position: "sticky",
+        top: "0px",
+        backgroundColor: "white",
+        zIndex: 2,
+        width: "100%",
+        display: "flex",
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Container>
+        <div style={{ color: "white" }}>test</div>
+      </Container>
+    </div>
+  );
+};
 
-export default Navbar
+/**
+<div
+      style={{
+        position: "fixed",
+        backgroundColor: "white",
+        zIndex: 2,
+        width: "100%",
+        display: 'flex',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    >
+      <div>
+        test
+      </div>
+    </div>
+ */
+
+export default Navbar;
