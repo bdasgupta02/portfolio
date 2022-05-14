@@ -16,7 +16,7 @@ import AnimatedCursor from "./components/Cursor";
 function App() {
   return (
     <Router>
-      <AnimatedCursor color="17, 28, 38" innerSize={8} outerSize={6} innerScale={0.7} outerScale={4} />
+      <AnimatedCursor innerSize={8} outerSize={8} innerScale={0.7} outerScale={4} />
       <Navbar />
       <div style={{ overflowY: "auto" }}>
         <Routes>

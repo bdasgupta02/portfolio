@@ -1,13 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 import Colors from "../tokens/colors";
+import darkmodeSlice from "../../features/darkmode/darkmodeSlice";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
+import { animated, useSpring } from "react-spring";
+
+const Bg = styled.div`
+  width: 100%;
+`;
 
 type Props = {
   children: React.ReactNode;
-  breakpoint?: string;
+  breakpoint?: "sm" | "md" | "lg";
 };
 
+// Add dark mode support with react spring for background linked to redux
 const Container = ({ children, breakpoint = "md" }: Props) => {
+  const isDarkmode = useSelector(
+    (state: RootState) => state.darkmode.isDarkmode
+  );
+
   const getBreakPoint = () => {
     switch (breakpoint) {
       case "sm":
@@ -19,10 +32,11 @@ const Container = ({ children, breakpoint = "md" }: Props) => {
     }
   };
 
-  const Bg = styled.div`
-    width: 100%;
-    background-color: ${Colors.Neutral.Background};
-  `;
+  const bgAnim = useSpring({
+    backgroundColor: isDarkmode
+      ? Colors.Neutral.Background
+      : Colors.Neutral.AntiFlashWhite,
+  });
 
   const Root = styled.div`
     width: 100%;
@@ -31,10 +45,12 @@ const Container = ({ children, breakpoint = "md" }: Props) => {
     max-width: ${getBreakPoint()};
   `;
 
+  const AnimatedBg = animated(Bg);
+
   return (
-    <Bg>
+    <AnimatedBg style={bgAnim}>
       <Root>{children}</Root>
-    </Bg>
+    </AnimatedBg>
   );
 };
 

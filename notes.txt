@@ -5,6 +5,9 @@ Groups:
 - Contact
 
 Aesthetic:
-- Dark mode first (redux init)
+- Dark mode first (redux initialization)
 - Colorful in accent/secondary coloring
 - Gradient text animation instead of gradient bg
+
+Important TODO list:
+- Change cursor detection clickable element from div[id] to another tag or class

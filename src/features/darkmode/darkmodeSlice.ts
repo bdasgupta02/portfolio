@@ -7,7 +7,7 @@ export const authSlice = createSlice({
       "isDarkmode" in localStorage
         ? localStorage.getItem("isDarkmode") !== "" &&
           localStorage.getItem("isDarkmode") === "true"
-        : false,
+        : true,
   } as {
     isDarkmode: boolean;
   },
