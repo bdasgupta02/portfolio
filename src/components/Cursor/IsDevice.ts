@@ -1,6 +1,7 @@
 const IsDevice: any = (() => {
   if (typeof navigator == "undefined") return;
   let ua = navigator.userAgent;
+  console.log(ua)
   return {
     info: ua,
     Android() {

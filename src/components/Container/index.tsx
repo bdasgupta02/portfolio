@@ -4,7 +4,7 @@ import Colors from "../tokens/colors";
 import darkmodeSlice from "../../features/darkmode/darkmodeSlice";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
-import { animated, useSpring } from "react-spring";
+import { animated, useSpring, config } from "react-spring";
 
 const Bg = styled.div`
   width: 100%;
@@ -36,6 +36,7 @@ const Container = ({ children, breakpoint = "md" }: Props) => {
     backgroundColor: isDarkmode
       ? Colors.Neutral.Background
       : Colors.Neutral.AntiFlashWhite,
+    config: config.stiff,
   });
 
   const Root = styled.div`

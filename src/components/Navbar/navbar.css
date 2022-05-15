@@ -1,0 +1,79 @@
+.NBOuter {
+  min-height: 100vh;
+  background-color: #fdfdfd;
+  padding-left: 10px;
+  padding-right: 10px;
+  overflow-y: auto;
+}
+
+.NBNavHeader {
+  height: fit-content;
+  width: 100%;
+}
+
+.NBLogoOuter {
+  width: fit-content;
+  height: fit-content;
+  border-radius: 8px;
+  margin-top: 60px;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding: 6px;
+  margin-bottom: 20px;
+}
+
+.NBLogo {
+  width: 30px;
+}
+
+.NBCollapseButton {
+  width: 25px;
+  height: 25px;
+  overflow: hidden;
+  background-color: #C2C2C259;
+  border-radius: 8px;
+  outline: 3px solid #C2C2C252;
+  outline-offset: -2px;
+  box-shadow: 0px 0px 0px #97979730;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: #8C8C8C;
+
+  -webkit-transition: box-shadow 200ms ease-out;
+  -moz-transition: box-shadow 200ms ease-out;
+  -o-transition: box-shadow 200ms ease-out;
+  -ms-transition: box-shadow 200ms ease-out;
+  transition: box-shadow 200ms ease-out;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.NBCollapseButton:hover {
+  box-shadow: 5px 8px 20px #97979730;
+}
+
+.NBCollapseButtonInner {
+  margin-top: 2.5px;
+  padding-bottom: 1px;
+  align-self: center;
+  text-align: center;
+}
+
+.NBSubtitle {
+  align-items: flex-end;
+  display: flex;
+  transform-origin: center left;
+}
+
+.NBOuter::-webkit-scrollbar {
+  width: 1px;
+}
+
+.NBOuter::-webkit-scrollbar:horizontal{
+  height: 0px;
+}

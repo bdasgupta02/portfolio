@@ -4,25 +4,29 @@ import Clickable from "../Clickable";
 import { BsFillSunFill, BsFillMoonStarsFill } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
-import Colors from "../tokens/colors";
+import Colors, { percentageToHex } from "../tokens/colors";
 import { useAppDispatch } from "../../app/hooks";
 import { toggleDarkmode } from "../../features/darkmode/darkmodeSlice";
 
 const CircularRoot = styled.div`
-  height: 30px;
-  width: 30px;
-  border-radius: 15px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
 `;
 
 const CircularLight = styled(CircularRoot)`
-  background-color: ${Colors.Neutral.AntiFlashWhite};
+  box-shadow: 5px 8px 20px ${Colors.Primary}${percentageToHex(10)};
+  background-color: ${Colors.Primary}${percentageToHex(20)};
+  outline: 3px solid ${Colors.Primary}${percentageToHex(10)};
 `;
 
 const CircularDark = styled(CircularRoot)`
-  background-color: ${Colors.Neutral.Background};
+  box-shadow: 5px 8px 20px ${Colors.Secondary.QueenBlue}${percentageToHex(10)};
+  background-color: ${Colors.Secondary.QueenBlue}${percentageToHex(20)};
+  outline: 3px solid ${Colors.Secondary.QueenBlue}${percentageToHex(10)};
 `;
 
 const DarkmodeSwitch = () => {
@@ -36,14 +40,14 @@ const DarkmodeSwitch = () => {
     <Clickable>
       {isDarkmode ? (
         <CircularLight onClick={() => dispatch(toggleDarkmode())}>
-          <BsFillMoonStarsFill
-            size={"15px"}
-            color={Colors.Neutral.Background}
-          />
+          <BsFillMoonStarsFill size={"17px"} color={Colors.Primary} />
         </CircularLight>
       ) : (
         <CircularDark onClick={() => dispatch(toggleDarkmode())}>
-          <BsFillSunFill size={"17px"} color={Colors.Neutral.AntiFlashWhite} />
+          <BsFillSunFill
+            size={"19px"}
+            color={`${Colors.Secondary.QueenBlue}${percentageToHex(80)}`}
+          />
         </CircularDark>
       )}
     </Clickable>

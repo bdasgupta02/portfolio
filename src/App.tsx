@@ -6,6 +6,7 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import AnimatedCursor from "./components/Cursor";
+import Container from "./components/Container";
 // Pages
 
 // Add dark mode handling for cursor 17, 28, 38 for light and 255, 255, 255 for dark (make lighter and darker respectively)
@@ -16,14 +17,20 @@ import AnimatedCursor from "./components/Cursor";
 function App() {
   return (
     <Router>
-      <AnimatedCursor innerSize={8} outerSize={8} innerScale={0.7} outerScale={4} />
+      <AnimatedCursor
+        innerSize={8}
+        outerSize={8}
+        innerScale={0.7}
+        outerScale={4}
+        outerAlpha={0.15}
+      />
       <Navbar />
       <div style={{ overflowY: "auto" }}>
         <Routes>
           <Route
             path="/"
             element={
-              <>
+              <Container>
                 <header className="App-header">
                   <img src={logo} className="App-logo" alt="logo" />
                   <Counter />
@@ -69,7 +76,7 @@ function App() {
                     </a>
                   </span>
                 </header>
-              </>
+              </Container>
             }
           />
         </Routes>

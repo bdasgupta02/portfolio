@@ -13,4 +13,13 @@ const Colors = {
     },
 }
 
+export const percentageToHex = (percentage : number) => {
+    const decimal = Math.round((percentage * 255) / 100)
+    if (percentage < 7) {
+        return "0" + decimal.toString(16).toUpperCase()
+    } else {
+        return decimal.toString(16).toUpperCase()
+    }
+}
+
 export default Colors;
