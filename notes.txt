@@ -11,3 +11,5 @@ Aesthetic:
 
 Important TODO list:
 - Change cursor detection clickable element from div[id] to another tag or class
+- Add darkmode button to mobile navbar
+- Revamp mobile navbar

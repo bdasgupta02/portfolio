@@ -32,7 +32,7 @@ const NavLinkLight = styled(Link)`
   &:hover {
     box-shadow: 5px 8px 20px ${Colors.Secondary.QueenBlue}${percentageToHex(5)};
     background-color: ${Colors.Secondary.QueenBlue}${percentageToHex(15)};
-    outline: 3px solid ${Colors.Secondary.QueenBlue}${percentageToHex(10)};
+    outline: 3px solid ${Colors.Secondary.QueenBlue}${percentageToHex(3)};
     outline-offset: -3px;
   }
 
@@ -42,7 +42,7 @@ const NavLinkLight = styled(Link)`
     outline: 3px solid ${Colors.Secondary.QueenBlue}${percentageToHex(10)};
     outline-offset: -3px;
     font-weight: bold;
-    color: #666666;
+    color: ${Colors.Secondary.QueenBlue}${percentageToHex(100)};
   }
 `;
 
@@ -72,7 +72,7 @@ const NavLinkDark = styled(Link)`
   &:hover {
     box-shadow: 5px 8px 20px ${Colors.Primary}${percentageToHex(5)};
     background-color: ${Colors.Primary}${percentageToHex(15)};
-    outline: 3px solid ${Colors.Primary}${percentageToHex(10)};
+    outline: 3px solid ${Colors.Primary}${percentageToHex(4)};
     outline-offset: -3px;
   }
 
@@ -82,7 +82,7 @@ const NavLinkDark = styled(Link)`
     outline: 3px solid ${Colors.Primary}${percentageToHex(10)};
     outline-offset: -3px;
     font-weight: bold;
-    color: ${Colors.Primary};
+    color: ${Colors.Primary}${percentageToHex(100)};
   }
 `;
 
